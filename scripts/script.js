@@ -13,10 +13,21 @@ realizada().then( function() {
   console.log('Promisse realizada')
 })
 
-rejeitada().then( function() {
+rejeitada().catch( function() {
   console.log('Promisse rejeitada')
 })
 
+function promiseTrabalhada() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve('Promisse tarbalhada')
+     }, 5000)
+    })
+}
+
+promiseTrabalhada().then( function(msg) {
+  console.log(msg)
+})
 
 console.log('hello world3');
 console.log('hello world4');
